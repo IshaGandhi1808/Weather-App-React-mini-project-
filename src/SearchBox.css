@@ -1,3 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
 .search-box {
   width: 100%;
   display: flex;
@@ -11,7 +19,6 @@
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
-  padding-top: 1rem;
   width: 22rem;
 }
 
