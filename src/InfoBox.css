@@ -1,0 +1,19 @@
+.weather-info-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.city-name {
+  text-transform: capitalize;
+}
+
+h4 {
+  text-align: center;
+  padding-block: 1.5rem 0.5rem;
+}
+
+img {
+  height: 15rem;
+}
