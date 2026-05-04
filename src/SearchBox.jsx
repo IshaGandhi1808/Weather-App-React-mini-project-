@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import "./SearchBox.css";
@@ -7,34 +8,44 @@ import { WEATHER_API_KEY } from "./config";
 
 const SearchBox = ({ updateInfo }) => {
   let [city, setCity] = useState("");
+  let [error, setError] = useState(false);
 
   const onChangeInput = (e) => {
     setCity(e.target.value);
   };
 
   const searchWeather = async () => {
-    const API_KEY = WEATHER_API_KEY;
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
-    let response = await fetch(API_URL);
-    let data = await response.json();
-    let result = {
-      city: city,
-      temp: data.main.temp,
-      tempMin: data.main.temp_min,
-      tempMax: data.main.temp_max,
-      humidity: data.main.humidity,
-      feels_like: data.main.feels_like,
-      weather: data.weather[0].description,
-    };
-    console.log(result);
-    return result;
+    try {
+      const API_KEY = WEATHER_API_KEY;
+      const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+      let response = await fetch(API_URL);
+      let data = await response.json();
+      let result = {
+        city: city,
+        temp: data.main.temp,
+        tempMin: data.main.temp_min,
+        tempMax: data.main.temp_max,
+        humidity: data.main.humidity,
+        feels_like: data.main.feels_like,
+        weather: data.weather[0].description,
+      };
+      console.log(result);
+      return result;
+    } catch (err) {
+      throw err;
+    }
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setCity("");
-    let info = await searchWeather();
-    updateInfo(info);
+    try {
+      e.preventDefault();
+      setCity("");
+      let info = await searchWeather();
+      updateInfo(info);
+      setError(false);
+    } catch (err) {
+      setError(true);
+    }
   };
 
   return (
@@ -52,6 +63,11 @@ const SearchBox = ({ updateInfo }) => {
         <Button variant="contained" endIcon={<SendIcon />} type="submit">
           Search
         </Button>
+        {error && (
+          <Typography style={{ color: "red" }} component={"p"}>
+            No such place exists!
+          </Typography>
+        )}
       </form>
     </div>
   );
