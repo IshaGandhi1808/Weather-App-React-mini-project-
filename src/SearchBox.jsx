@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import "./SearchBox.css";
+import { WEATHER_API_KEY } from "./config";
 
 const SearchBox = ({ updateInfo }) => {
   let [city, setCity] = useState("");
@@ -12,7 +13,7 @@ const SearchBox = ({ updateInfo }) => {
   };
 
   const searchWeather = async () => {
-    const API_KEY = `f6378f7b958b478d12bd82088ac44682`;
+    const API_KEY = WEATHER_API_KEY;
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
     let response = await fetch(API_URL);
     let data = await response.json();
