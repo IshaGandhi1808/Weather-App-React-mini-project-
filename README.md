@@ -1,16 +1,28 @@
-# React + Vite
+# 🌦️ Weather App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)
+![CSS](https://img.shields.io/badge/CSS-Style-blue?style=for-the-badge&logo=css3)
+![API](https://img.shields.io/badge/API-Weather-orange?style=for-the-badge&logo=api)
+![Responsive](https://img.shields.io/badge/Design-Responsive-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A clean and responsive weather application built using React. This app allows users to search for any city and view real-time weather information such as temperature, conditions, humidity, and more.
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌍 Search weather by city name
+- 🌡️ Real-time temperature and weather conditions
+- 💧 Humidity and wind details
+- 📍 Displays city and country
+- ⛅ Weather icons based on conditions
+- 📱 Responsive design
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Hooks & Functional Components)
+- JavaScript (ES6+)
+- CSS / Tailwind / Bootstrap
+- Weather API integration
